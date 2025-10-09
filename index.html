@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h2 class="logo">&lt;GD/&gt;</h2>
+        <nav class="navegacao">
+            <ul class="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="secao-inicio reveal">
+        <div class="container-inicio">
+            <div class="texto-inicio">
+                <h2 class="apresentacao">Olá, eu sou</h2>
+                <h1 class="nome">Guilherme Dreyer</h1>
+                <p class="apresentacao2">Desenvolvedor front-end</p>
+
+                <div class="redes">
+                    <a href="https://www.linkedin.com/in/guilherme-meine-dreyer-86b91a2b2/" class="botao1">LinkedIn</a>
+                    <a href="https://github.com/GuilhermeMeineDreyer" class="botao2">GitHub</a>
+                </div>
+            </div>
+
+            <img class="foto-programando" src="assets/eu programando 3.png" alt="Imagem de um homem programando">
+        </div>
+    </section>
+
+
+    <section id="sobre" class="secao-sobre reveal">
+        <div class="conteudo-sobre">
+            <div class="foto"><img src="assets/eu.jpg" alt="foto do Guilherme"></div>
+            <div class="texto">
+                <h2 class="titulo">SOBRE MIM</h2>
+                <p class="paragrafo-intro">São Leopoldo, Rio Grande do Sul</p>
+                <p class="paragrafo1"> Meu primeiro contato com a tecnologia aconteceu ainda no ensino médio, quando
+                    participei de um curso de lógica de programação. Essa experiência despertou em mim o interesse pelo
+                    desenvolvimento e me motivou a seguir na área de tecnologia.</p>
+                <p class="paragrafo2">Após concluir a escola, ingressei na faculdade de Análise e Desenvolvimento de
+                    Sistemas na UNISINOS, onde estou atualmente no terceiro semestre. Durante minha jornada acadêmica e
+                    pessoal, venho aprimorando minhas habilidades em desenvolvimento front-end, com foco em criar
+                    interfaces modernas, funcionais e centradas no usuário.</p>
+                <p class="paragrafo3">Sou um desenvolvedor curioso e comprometido em aprender constantemente. Tenho
+                    facilidade em trabalhar em equipe e gosto de colaborar em projetos que envolvam criatividade,
+                    usabilidade e inovação. Meu objetivo é continuar evoluindo como profissional, explorando novas
+                    tecnologias e contribuindo para soluções digitais que façam a diferença</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades" class="secao-habilidades reveal">
+        <h2 class="titulo-habilidades">HABILIDADES</h2>
+
+        <div class="container-habilidades">
+            <div class="habilidade">
+                <img src="assets/html.png" alt="Logo HTML">
+                <p>HTML</p>
+            </div>
+            <div class="habilidade">
+                <img src="assets/css.png" alt="Logo CSS">
+                <p>CSS</p>
+            </div>
+            <div class="habilidade">
+                <img src="assets/javascript.png" alt="Logo JavaScript">
+                <p>JavaScript</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projetos" class="secao-projetos reveal">
+        <h2 class="titulo-projetos">PROJETOS</h2>
+
+        <div class="container-projetos">
+            <div class="projeto">
+                <a class="links" href="https://alura-books-phi.vercel.app/" target="_blank">
+                    <img class="img-projeto" src="assets/alura books.png" alt="Imagem do projeto alura books">
+                    <h3>AluraBooks</h3>
+                    <p>Projeto para praticar responsividade e organização de conteúdo<br> em listas e grids.</p>
+                </a>
+            </div>
+
+            <div class="projeto">
+                <a class="links" href="https://alura-plus-iota-six-28.vercel.app/" target="_blank">
+                    <img class="img-projeto" src="assets/alura plus.png" alt="Imagem do projeto alura plus">
+                    <h3>Alura Plus</h3>
+                    <p>Projeto para aplicar conceitos de layout com flexbox e tipografia</p>
+                </a>
+            </div>
+
+            <!--
+            <div class="projeto">
+                <a class="links" href="https://www.unisinos.br/" target="_blank">
+                    <img class="img-projeto" src="assets/em breve.webp" alt="Imagem da unisinos">
+                    <h3>Projeto 3</h3>
+                    <p>Descrição do projeto 3.</p>
+                </a>
+            </div>
+            -->
+           
+        </div>
+    </section>
+
+
+
+    <section id="contato" class="secao-contatos reveal">
+        <h2 class="contato-titulo">Entre em contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite a sua mensagem" id="mensagem" rows="6"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5551997059659'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank');
+        }
+
+    </script>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        reveals.forEach(reveal => {
+            observer.observe(reveal);
+        });
+    </script>
+
+
+</body>
+
+</html>
