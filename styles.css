@@ -275,9 +275,7 @@ header nav ul li a:hover {
   display: flex;
   justify-content: center;
   gap: 150px;
-  padding-left: 0px;
-  padding-right: 0px;
-  flex-wrap: wrap;
+  
 }
 
 .projetos {
